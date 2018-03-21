@@ -1,0 +1,149 @@
+
+html, body{
+      width:  100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid gainsboro;
+      font-family: sans-serif;
+}
+
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+ul, li {
+      list-style: none;
+}
+//.......................
+
+@mixin flex{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+
+
+// Formulario
+//...........
+.form-select{
+      width: 150px;
+      height: 30px;
+      position: relative;
+}
+
+
+// ul plegado
+//...........
+.ul-select{
+      width: 100%;
+      height: 30px;
+      overflow: hidden;
+      transition: all, .3s;
+      position: absolute;
+      top: 0;
+      left: 0;
+}
+
+
+// li que hace de botón
+//......................
+.li-button-select{
+      @include flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 30px;
+      padding-left: 10px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #333;
+      border: 1px solid gainsboro;
+      cursor: pointer;
+}
+.li-button-select p{
+      transition: all, .1s;
+      &:hover{
+            transform: scale(1.05, 1.05);
+            text-shadow: 0 3px 2px #666;
+      }
+}
+
+
+// li plegadas
+// Desde js
+//.....................
+.capas-li{
+      @include flex;
+      justify-content: flex-start;
+      width: 100%;
+      height: 0;
+      padding-left: 10px;
+      background-color: #fff;
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: transparent; // Suaviza el efecto durante el toggle
+      overflow: hidden;
+      transition: all, .3s;
+      cursor: pointer;
+            &:hover{
+            color: #fff;
+            background-color: #1f96af; // Luz on hover
+      }
+}
+
+
+
+// Desplegar el ul 
+// Desde JS
+//..................
+.desplegar-ul{
+      transition: all, .3s;
+      height: 180px;
+      box-shadow: 0 2px 6px #666;
+}
+
+
+
+// Desplegar los li
+// Desde JS
+//..................
+.desplegar-li{
+      height: 30px;
+      border-bottom: 1px solid #c0c0c0;
+      color: #222450;
+}
+
+
+
+// Añadir scroll
+// Desde JS
+//...............
+.scroll-ul{
+      overflow: scroll;
+      overflow-x: hidden;
+}
+
+
+
+// Quitar y poner borde
+// al botón li
+//............
+.borde-li{
+      border: none;
+}
+
+
+
+// Icono triángulo
+//.............
+.fa-sort-desc{
+      font-family: 'FontAwesome';
+      font-size: 20px;
+      content: "\f0dd";
+      padding-right: 10px;
+      margin-bottom: 4px;
+}
